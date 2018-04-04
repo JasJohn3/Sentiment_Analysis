@@ -1,5 +1,5 @@
 #Twitter Sentiment Analysis
-
+#Testing Commit to Github
 import tweepy
 from textblob import TextBlob
 
@@ -14,20 +14,17 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 print("Please Enter the Word you would like to perform a sentiment analysis on!")
 User_Input = input()
+User_Tweet_Search_Size = int(input("Please enter how large you want your search to be: "))
 
 
 #Retrieve Tweets
 public_tweets = api.search(User_Input)
 
-# CHALLENGE - Instead of printing out each tweet, save each Tweet to a CSV file
-# and label each one as either 'positive' or 'negative', depending on the sentiment
-# You can decide the sentiment polarity threshold yourself
-
 
 for tweet in public_tweets:
+    print("============================================================================================================================================================================================")
     print(tweet.text)
-
     # Step 4 Perform Sentiment Analysis on Tweets
     analysis = TextBlob(tweet.text)
     print(analysis.sentiment)
-    print("")
+    print("============================================================================================================================================================================================")
