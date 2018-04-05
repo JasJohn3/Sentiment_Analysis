@@ -24,9 +24,12 @@ User_Tweet_Search_Size = int(input("Please enter how large you want your search 
 
 #Retrieve Tweets
 public_tweets = api.search(q=User_Input, count= User_Tweet_Search_Size)
-
+counter = 0
 for tweet in public_tweets:
+
+     counter = counter + 1
      print("============================================================================================================================================================================================")
+     print("|",counter,"|")
      print(tweet.text)
      print("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
      # Step 4 Perform Sentiment Analysis on Tweets
