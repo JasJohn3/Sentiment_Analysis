@@ -1,5 +1,6 @@
 #Twitter Sentiment Analysis
 #Testing Commit to Github
+
 import tweepy
 from textblob import TextBlob
 
@@ -18,13 +19,13 @@ User_Tweet_Search_Size = int(input("Please enter how large you want your search 
 
 
 #Retrieve Tweets
-public_tweets = api.search(User_Input)
-
+public_tweets = api.search(q=User_Input, count= User_Tweet_Search_Size)
 
 for tweet in public_tweets:
-    print("============================================================================================================================================================================================")
-    print(tweet.text)
-    # Step 4 Perform Sentiment Analysis on Tweets
-    analysis = TextBlob(tweet.text)
-    print(analysis.sentiment)
-    print("============================================================================================================================================================================================")
+     print("============================================================================================================================================================================================")
+     print(tweet.text)
+     print("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+     # Step 4 Perform Sentiment Analysis on Tweets
+     analysis = TextBlob(tweet.text)
+     print(analysis.sentiment)
+     print("============================================================================================================================================================================================")
